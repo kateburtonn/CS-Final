@@ -14,6 +14,7 @@ import csv
 init()
 
 word_list = []
+Play_Game = 0
 
 #loop for starting game and continuing it through each guess
 loop = True
@@ -23,7 +24,7 @@ while loop:
         loop = False
     elif command == 'y':
         inner_loop = 0
-        word = "LOOP" #random.choice(word_list)
+        word = random.choice(word_list)
         
         while inner_loop < 5:
             attempt = input('Enter a four letter word: ').upper()
@@ -42,11 +43,13 @@ while loop:
             print(output)
             if word == attempt:
                 inner_loop = inner_loop + 1
-                print(f'You win! It took you {inner_loop} guesses.')
+                Play_Game = Play_Game + 1
+                print(f'You win! It took you {inner_loop} guesses and you have played {Play_Game} time(s)')
                 inner_loop = inner_loop + 5 #resets the game
             inner_loop = inner_loop + 1
         if inner_loop == 5:
-            print(f'You lost! The correct word was {word}.')
+            Play_Game = Play_Game + 1
+            print(f'You lost! The correct word was {word}, and you have played {Play_Game} time(s) ')
             
 if __name__ == '__main__':
     with open('four_letter.csv', 'r',newline='') as csvfile:
