@@ -13,8 +13,7 @@ import random
 import csv
 init()
 
-word_list = ['KILL', 'PLAY', 'WORD', 'LOOP', 'MOSS', 'JEEP', 'HELP']
-
+word_list = []
 
 #loop for starting game and continuing it through each guess
 loop = True
@@ -48,7 +47,12 @@ while loop:
             inner_loop = inner_loop + 1
         if inner_loop == 5:
             print(f'You lost! The correct word was {word}.')
-
+            
+if __name__ == '__main__':
+    with open('four_letter.csv', 'r',newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            word_list.append(float(row[1]))
 
 
 
