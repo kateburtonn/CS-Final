@@ -13,6 +13,31 @@ import random
 import csv
 init()
 
+"""
+word_list = ["AREA\n" "ARMY\n" "BABY\n" "BALL\n" "BOOK\n" "BASE\n" "CITY\n" "CARD\n"
+             "CLUB\n" "CASE\n" "DATE\n" "DEAL\n" "DUTY\n" "EAST\n" "EDGE\n" "FACE\n" "FACT\n" "FARM\n"
+             "FEAR\n" "FORE\n" "FILE\n" "FILM\n" "FISH\n" "FIRE\n" "GAME\n" "GIRL\n" "GOAL\n" "GOLD\n" "HAIR\n" "HALF\n"
+             "HAND\n" "HEAD\n" "HELD\n" "HELP\n" "HOPE\n"
+             "HOUR\n" "IDEA\n" "NERD\n" "KING\n" "KIND\n" "LUCK\n" "LADY\n" "LIFE\n" "LIST\n" "LORD\n" "LOVE\n"
+             "LASS\n" "LINK\n" "MOVE\n" "MOOD\n" "MOPE\n" "NEED\n" "NEWS\n" "PAGE\n" "PAIN\n" "PARK\n" "PAST\n"
+             "PATH\n" "PAIR\n" "BEAR\n" "BEAT\n" "YOUR\n" "THEY\n" "THEM\n" "OURS\n" "WHEN\n" "ABLE\n" "WITH\n" "UPON\n"
+             "FOUL\n" "HELL\n" "CIAO\n" "DEAD\n" "WISH\n" "WANT\n" "SING\n" "SONG\n" "SAVE\n" "PALE\n" "HOLY\n"
+             "NAIL\n" "PAIL\n" "MAIL\n" "SANK\n" "SINK\n" "ZANY\n" "MALE\n" "CAPE\n" "TAPE\n" "VENT\n"
+             "RATE\n" "FATE\n" "SAND\n" "DOLL\n" "PLAY\n" "UGLY\n" "RACK\n" "NEON\n" "NAME\n" "QUAD\n" "QUIZ\n"
+             "SAIL\n" "SAID\n" "SALT\n" "VASE\n" "WAKE\n" "WALK\n" "RUDE\n" "TEND\n" "TAXI\n" "TELL\n" "CAKE\n" "SHOP\n"
+             "SHIP\n" "SOUP\n" "PLOT\n" "SPOT\n" "FIST\n" "ARCH\n" "OUCH\n" "ROCK\n" "KICK\n" "SICK\n" "LICK\n" "BIRD\n"  
+             "BELL\n" "KILL\n" "HAND\n" "FISH\n" "FROG\n" "SENT\n" "TENT\n" "KISS\n" "POND\n" "STOP\n" "LAMP\n" "INTO\n"
+             "WORM\n" "HORN\n" "DOVE\n" "LOCK\n" "HONK\n" "HARP\n" "YARN\n" "DAMP\n" "JAIL\n" "CUSS\n" "WALL\n"
+             "MASK\n" "PUNK\n" "MEAT\n" "DISC\n" "HERO\n" "MUSE\n" "MOON\n" "STAR\n" "WORD\n" "SOUL\n" "JINX\n" "EACH\n" "OOZE\n" "COZY\n"
+             "ZONE\n" "YETI\n" "YAWN\n" "AXIS\n" "COAX\n" "HAVE\n" "BOXY\n" "QUIT\n" "HAZY\n" "SOIL\n" "LAZY\n"
+             "SWAN\n" "SASH\n" "JADE\n" "JOLT\n" "JABS\n" "JUST\n" "ICON\n" "IDOL\n" "INCH\n" "INCH\n" "IDLE\n"
+             "IONS\n" "OBOE\n" "OATH\n" "IRON\n" "MINE\n" "KALE\n" "KELP\n" "RASP\n" "RASH\n" "RICH\n" "RING\n" "RIPE\n" "ROBE\n"]
+
+with open('four_letter.txt', 'w',newline='') as f:
+    for line in word_list:
+        f.write(line)
+"""
+
 
 word_list = []
 def wordle(attempt):
@@ -73,9 +98,8 @@ if __name__ == '__main__':
              "IONS", "OBOE", "OATH", "IRON", "MINE", "KALE", "KELP", "RASP", "RASH", "RICH", "RING", "RIPE", "ROBE"])
 
     with open('four_letter.csv', 'r',newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            word_list.append(row[1])
+       with open('four_letter.txt') as fh:
+        for line in fh:
+            word_list.append(line)         
     word = random.choice(word_list)
     wordle(word)
-    
