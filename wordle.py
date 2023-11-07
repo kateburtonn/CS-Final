@@ -13,8 +13,28 @@ import random
 import csv
 init()
 
+"""
+word_list = ["AREA", "ARMY", "BABY", "BALL", "BOOK", "BASE", "CITY", "CARD", "CLUB", "CASE",
+             "DATE", "DEAL", "DUTY", "EAST", "EDGE", "FACE", "FACT", "FARM", "FEAR", "FORE", "FILE",
+             "FILM", "FISH", "FIRE", "GAME", "GIRL", "GOAL", "GOLD", "HAIR", "HALF", "HAND", "HEAD", "HELD", "HELP", "HOPE",
+             "HOUR", "IDEA", "NERD", "KING", "KIND", "LUCK", "LADY", "LIFE", "LIST", "LORD", "LOVE",
+             "LASS", "LINK", "MOVE", "MOOD", "MOPE", "NEED", "NEWS", "PAGE", "PAIN", "PARK", "PAST",
+             "PATH", "PAIR", "BEAR", "BEAT", "YOUR", "THEY", "THEM", "OURS", "WHEN", "ABLE", "WITH", "UPON",
+             "FOUL", "HELL", "CIAO", "DEAD", "WISH", "WANT", "SING", "SONG", "SAVE", "PALE", "HOLY",
+             "NAIL", "PAIL", "MAIL", "SANK", "SINK", "ZANY", "MALE", "CAPE", "TAPE", "VENT",
+             "RATE", "FATE", "SAND", "DOLL", "PLAY", "UGLY", "RACK", "NEON", "NAME", "QUAD", "QUIZ",
+             "SAIL", "SAID", "SALT", "VASE", "WAKE", "WALK", "RUDE", "TEND", "TAXI", "TELL", "CAKE", "SHOP",
+             "SHIP", "SOUP", "PLOT", "SPOT", "FIST", "ARCH", "OUCH", "ROCK", "KICK", "SICK", "LICK", "BIRD",
+             "BELL", "KILL", "HAND", "FISH", "FROG", "SENT", "TENT", "KISS", "POND", "STOP", "LAMP", "INTO"
+             "WORM", "HORN", "DOVE", "LOCK", "HONK", "HARP", "YARN", "DAMP", "JAIL", "CUSS", "WALL",
+             "MASK", "PUNK", "MEAT", "DISC", "HERO", "MUSE", "MOON", "STAR", "WORD", "SOUL", "JINX", "EACH", "OOZE", "COZY",
+             "ZONE", "YETI", "YAWN", "AXIS", "COAX", "HAVE", "BOXY", "QUIT", "HAZY", "SOIL", "LAZY",
+             "SWAN", "SASH", "JADE", "JOLT", "JABS", "JUST", "ICON", "IDOL", "INCH", "INCH", "IDLE",
+             "IONS", "OBOE", "OATH", "IRON", "MINE", "KALE", "KELP", "RASP", "RASH", "RICH", "RING", "RIPE", "ROBE"]
+"""
 word_list = []
-Play_Game = 0
+Play_Game = 0 
+#Tracks how many games are played
 def wordle(guess):
     #loop for starting game and continuing it through each guess
     loop = True
