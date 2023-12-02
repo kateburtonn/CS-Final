@@ -23,18 +23,25 @@ def wordle(attempt):
         elif start == 'yes':
             tries = 0
             #tracks number of attempts
+            excueted = []
+            #tracks attempted words
             word = random.choice(word_list)
             
             while tries < 5:
                 attempt = input(Back.WHITE + Fore.BLACK +
                                 'Enter a four letter word: '
                                 + Style.RESET_ALL).upper()
+                if attempt in excueted:
+                    attempt = input(Back.WHITE + Fore.BLACK +
+                                    'Word was already attempted.'
+                                    f'Enter another word: '
+                                    + Style.RESET_ALL).upper()
                 while len(attempt) != 4:
                     attempt = input(Back.WHITE + Fore.BLACK +
                                     'Word was not four letters.'
                                     f'Enter another word: '
                                     + Style.RESET_ALL).upper()
-                      
+                excueted.append(attempt)     
                 output = ''
                 for i in range(4): #range is length of word
                     if attempt[i] == word[i]:
@@ -62,6 +69,7 @@ def wordle(attempt):
                 print(Back.WHITE + Fore.BLACK +
                       f'You have {5 - tries} attempt(s) left.'
                       + Style.RESET_ALL)
+                
             if tries == 5:
                 Play_Game = Play_Game + 1
                 print(Back.WHITE + Fore.BLACK +
@@ -79,7 +87,3 @@ if __name__ == '__main__':
             
     word = random.choice(word_list)
     wordle(word)
-            
-    word = random.choice(word_list)
-    wordle(word)
-
