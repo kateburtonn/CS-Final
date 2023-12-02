@@ -7,6 +7,7 @@ Wordle
 from colorama import init, Fore, Back, Style
 import random
 
+
 word_list = []
 
 def wordle(attempt):
@@ -46,18 +47,21 @@ def wordle(attempt):
                         output = output + Back.BLACK + attempt[i] + Back.RESET
                         #Incorrect letter
                 print(output)
-                   
+                
                 if word == attempt:
                     tries = tries + 1
                     Play_Game = Play_Game + 1
                     print(Back.WHITE + Fore.BLACK +
-                          f'You win! It took you {inner_loop} guesses'
-                          f'and you have played {Play_Game} time(s)'
+                          f'You win! It took you {tries} guesses'
+                          f' and you have played {Play_Game} time(s)'
                           + Style.RESET_ALL)
                     tries = tries + 5 #resets the game
                     
                 tries = tries + 1
                 #If attempt unsuccessful, adds to counter
+                print(Back.WHITE + Fore.BLACK +
+                      f'You have {5 - tries} attempt(s) left.'
+                      + Style.RESET_ALL)
             if tries == 5:
                 Play_Game = Play_Game + 1
                 print(Back.WHITE + Fore.BLACK +
@@ -72,6 +76,9 @@ if __name__ == '__main__':
         for line in fh:
             word_list.append(line.strip())
     #opens word list and appends it
+            
+    word = random.choice(word_list)
+    wordle(word)
             
     word = random.choice(word_list)
     wordle(word)
