@@ -26,7 +26,6 @@ def wordle(attempt):
             excueted = []
             #tracks attempted words
             word = random.choice(word_list)
-            print(word)
             while tries < 5:
                 attempt = input(Back.WHITE + Fore.BLACK +
                                 'Enter a four letter word: '
