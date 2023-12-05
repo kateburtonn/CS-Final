@@ -79,7 +79,6 @@ def wordle(attempt):
             
             
 if __name__ == '__main__':
-    word_list = []
     with open('four_letter.txt', 'r') as fh:
         for line in fh:
             word_list.append(line.strip())
