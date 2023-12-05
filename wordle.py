@@ -18,7 +18,12 @@ def validation(attempt, executed):
     if attempt in executed:
         attempt = input(Back.WHITE + Fore.BLACK +
                         'Word was already attempted.'
-                        'Enter another word: '
+                        ' Enter another word: '
+                        + Style.RESET_ALL).upper()
+        while attempt in executed:
+            attempt = input(Back.WHITE + Fore.BLACK +
+                        'Word was already attempted.'
+                        ' Enter another word: '
                         + Style.RESET_ALL).upper()
     while len(attempt) != 4:
         attempt = input(Back.WHITE + Fore.BLACK +
@@ -28,7 +33,7 @@ def validation(attempt, executed):
         while attempt in executed:
             attempt = input(Back.WHITE + Fore.BLACK +
                             'Word was already attempted.'
-                            'Enter another word: '
+                            ' Enter another word: '
                             + Style.RESET_ALL).upper()
     executed.append(attempt)
     return attempt 
